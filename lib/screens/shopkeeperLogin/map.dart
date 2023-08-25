@@ -30,7 +30,7 @@ class _MapScreenState extends State<MapScreen> {
 
   Future<void> _getPlaceId(String query) async {
     final url =
-        'https://maps.googleapis.com/maps/api/place/textsearch/json?query=$query&key=AIzaSyDDOzjTjf01A0aBmDmnqyNKxGDASg2x7bE';
+        'https://maps.googleapis.com/maps/api/place/textsearch/json?query=$query&key=';
     http.Response response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
