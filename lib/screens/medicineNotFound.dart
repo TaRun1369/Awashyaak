@@ -15,7 +15,7 @@ class MedicineNotFound extends StatelessWidget {
   Widget build(BuildContext context) {
     double relative = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: secondryColor,
+      backgroundColor: secondaryColor,
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,

@@ -47,7 +47,7 @@ class MedicineCard extends StatelessWidget {
                       maxLines: 2,
                       overflow: TextOverflow.fade,
                       style: TextStyle(
-                        color: secondryColor,
+                        color: secondaryColor,
                         fontSize: relative / 40,
                         fontWeight: FontWeight.bold,
                       ),
@@ -56,15 +56,15 @@ class MedicineCard extends StatelessWidget {
                     Text(
                       "Expery detail - $expiery",
                       style: TextStyle(
-                        fontSize: relative /52,
-                        color: secondryColor,
+                        fontSize: relative / 52,
+                        color: secondaryColor,
                       ),
                     ),
                     Text(
                       "Quantity - ${quantity.toString()}",
                       style: TextStyle(
                         fontSize: relative / 50,
-                        color: secondryColor,
+                        color: secondaryColor,
                       ),
                     ),
                   ],

@@ -1,5 +1,5 @@
 import 'package:awashyak_v1/screens/shopkeeper/homepageShop.dart';
-
+import 'package:fancy_password_field/fancy_password_field.dart';
 
 import '../../screens/homepage.dart';
 
@@ -70,7 +70,7 @@ class SignIn extends StatelessWidget {
                   onChanged: (value) => {},
                   decoration: const InputDecoration(
                     filled: true,
-                    fillColor: secondryColor,
+                    fillColor: secondaryColor,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -85,13 +85,14 @@ class SignIn extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40.0),
-                child: TextFormField(
+                child: FancyPasswordField(
                   controller: passwordcontroller,
                   keyboardType: TextInputType.text,
-                  onChanged: (value) => {},
+                  hasStrengthIndicator: false,
+                  hasValidationRules: false,
                   decoration: const InputDecoration(
                     filled: true,
-                    fillColor: secondryColor,
+                    fillColor: secondaryColor,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       borderSide: BorderSide(color: primaryColor, width: 3.0),

@@ -41,7 +41,7 @@ class _ShopManagerState extends State<ShopManager> {
   Widget build(BuildContext context) {
     double relative = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: secondryColor,
+      backgroundColor: secondaryColor,
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
@@ -114,13 +114,15 @@ class _ShopManagerState extends State<ShopManager> {
                                       inStock: false,
                                       token: widget.token,
                                     );
-                                  }else{return IndividualMedicineShop(
-                                    name: snapshot1.data["name"],
-                                    quantity: snapshot1.data["Quantity"],
-                                    time: snapshot1.data["expiry"],
-                                    inStock: true,
-                                    token: widget.token,
-                                  );}
+                                  } else {
+                                    return IndividualMedicineShop(
+                                      name: snapshot1.data["name"],
+                                      quantity: snapshot1.data["Quantity"],
+                                      time: snapshot1.data["expiry"],
+                                      inStock: true,
+                                      token: widget.token,
+                                    );
+                                  }
                                 }
                                 return const IndiLoading();
                               },
@@ -135,7 +137,7 @@ class _ShopManagerState extends State<ShopManager> {
                     ),
                   ),
                   filled: true,
-                  fillColor: secondryColor,
+                  fillColor: secondaryColor,
                   enabledBorder: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                     borderSide: BorderSide(color: primaryColor, width: 3.0),

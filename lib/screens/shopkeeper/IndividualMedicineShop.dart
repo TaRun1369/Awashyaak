@@ -153,7 +153,7 @@ class _IndividualMedicineShopState extends State<IndividualMedicineShop> {
                     child: Container(
                       height: relHeight / 15,
                       decoration: const BoxDecoration(
-                        color: secondryColor,
+                        color: secondaryColor,
                         borderRadius: BorderRadius.all(
                           Radius.circular(30),
                         ),
@@ -256,7 +256,7 @@ class _IndividualMedicineShopState extends State<IndividualMedicineShop> {
                     child: Container(
                       height: relHeight / 15,
                       decoration: const BoxDecoration(
-                        color: secondryColor,
+                        color: secondaryColor,
                         borderRadius: BorderRadius.all(
                           Radius.circular(30),
                         ),
@@ -357,7 +357,7 @@ class _IndividualMedicineShopState extends State<IndividualMedicineShop> {
                             int.parse(amountController.text),
                             int.parse(costController.text),
                           );
-                          if (res == "sucess"){
+                          if (res == "sucess") {
                             setState(() {
                               widget.inStock = true;
                             });
@@ -367,7 +367,7 @@ class _IndividualMedicineShopState extends State<IndividualMedicineShop> {
                             minimumSize: MaterialStateProperty.all<Size>(
                                 const Size(200, 60)),
                             backgroundColor:
-                                MaterialStateProperty.all(secondryColor),
+                                MaterialStateProperty.all(secondaryColor),
                             shape: MaterialStateProperty.all<
                                     RoundedRectangleBorder>(
                                 RoundedRectangleBorder(

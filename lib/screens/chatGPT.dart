@@ -41,7 +41,7 @@ class _ChatGPTState extends State<ChatGPT> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: secondryColor,
+      backgroundColor: secondaryColor,
       appBar: AppBar(
         title: const Text(
           "Ask me",
@@ -112,7 +112,6 @@ class _ChatGPTState extends State<ChatGPT> {
                         child: const Icon(Icons.search_outlined)),
                   ),
                 ),
-                
               ],
             ),
           ),

@@ -1,7 +1,6 @@
 import 'package:awashyak_v1/integration/seller.dart';
 import 'package:awashyak_v1/screens/shopkeeper/homepageShop.dart';
 
-
 import '../../screens/homepage.dart';
 
 import '../../constants.dart';
@@ -71,7 +70,7 @@ class SignInShopkeeper extends StatelessWidget {
                   onChanged: (value) => {},
                   decoration: const InputDecoration(
                     filled: true,
-                    fillColor: secondryColor,
+                    fillColor: secondaryColor,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -92,7 +91,7 @@ class SignInShopkeeper extends StatelessWidget {
                   onChanged: (value) => {},
                   decoration: const InputDecoration(
                     filled: true,
-                    fillColor: secondryColor,
+                    fillColor: secondaryColor,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       borderSide: BorderSide(color: primaryColor, width: 3.0),

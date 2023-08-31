@@ -16,7 +16,11 @@ class HomePageShop extends StatefulWidget {
   String token;
   String shopid;
   String shopName;
-  HomePageShop({super.key, required this.token, required this.shopid,required this.shopName});
+  HomePageShop(
+      {super.key,
+      required this.token,
+      required this.shopid,
+      required this.shopName});
 
   @override
   State<HomePageShop> createState() => _HomePageShopState();
@@ -54,7 +58,7 @@ class _HomePageShopState extends State<HomePageShop> {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: secondryColor,
+      backgroundColor: secondaryColor,
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
@@ -98,12 +102,11 @@ class _HomePageShopState extends State<HomePageShop> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                 Text(
+                                Text(
                                   widget.shopName,
                                   style: const TextStyle(
                                     color: lightColor,
                                     fontSize: 30,
-                                    
                                   ),
                                 ),
                                 ElevatedButton(
@@ -121,7 +124,7 @@ class _HomePageShopState extends State<HomePageShop> {
                                   style: ButtonStyle(
                                       backgroundColor:
                                           MaterialStateProperty.all(
-                                              secondryColor),
+                                              secondaryColor),
                                       shape: MaterialStateProperty.all<
                                               RoundedRectangleBorder>(
                                           RoundedRectangleBorder(
@@ -324,12 +327,11 @@ class _HomePageShopState extends State<HomePageShop> {
                                       MaterialPageRoute(
                                         builder: (context) =>
                                             IndividualMedicineShop(
-                                              name: snapshot.data?.brandName??"",
-                                              quantity: 0,
-                                              time: "",
-                                              inStock: false,
-                                              token: widget.token,
-                                          
+                                          name: snapshot.data?.brandName ?? "",
+                                          quantity: 0,
+                                          time: "",
+                                          inStock: false,
+                                          token: widget.token,
                                         ),
                                       ),
                                     );
@@ -400,12 +402,11 @@ class _HomePageShopState extends State<HomePageShop> {
                                       MaterialPageRoute(
                                         builder: (context) =>
                                             IndividualMedicineShop(
-                                              name: snapshot.data?.brandName??"",
-                                              quantity: 0,
-                                              time: "",
-                                              inStock: false,
-                                              token: widget.token,
-                                          
+                                          name: snapshot.data?.brandName ?? "",
+                                          quantity: 0,
+                                          time: "",
+                                          inStock: false,
+                                          token: widget.token,
                                         ),
                                       ),
                                     );
@@ -476,12 +477,11 @@ class _HomePageShopState extends State<HomePageShop> {
                                       MaterialPageRoute(
                                         builder: (context) =>
                                             IndividualMedicineShop(
-                                              name: snapshot.data?.brandName??"",
-                                              quantity: 0,
-                                              time: "",
-                                              inStock: false,
-                                              token: widget.token,
-                                          
+                                          name: snapshot.data?.brandName ?? "",
+                                          quantity: 0,
+                                          time: "",
+                                          inStock: false,
+                                          token: widget.token,
                                         ),
                                       ),
                                     );

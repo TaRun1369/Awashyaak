@@ -46,20 +46,27 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: secondryColor,
+      backgroundColor: secondaryColor,
       appBar: AppBar(
         centerTitle: true,
-        title:  const Text(
+        title: const Text(
           "AWASHYAK",
           style: TextStyle(
             color: lightColor,
             fontSize: 24,
           ),
         ),
-        actions: <Widget>[IconButton(onPressed: (() => Navigator.pop(context)), icon: const Icon(Icons.exit_to_app),)],
+        actions: <Widget>[
+          IconButton(
+            onPressed: (() => Navigator.pop(context)),
+            icon: const Icon(Icons.exit_to_app),
+          )
+        ],
         backgroundColor: primaryColor,
       ),
-      drawer:  const Drawer(backgroundColor: Colors.white,),
+      drawer: const Drawer(
+        backgroundColor: Colors.white,
+      ),
       body: SingleChildScrollView(
         child: Column(
           verticalDirection: VerticalDirection.down,
@@ -90,12 +97,10 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                         // ),
                         Container(
                           height: screenHeight * 0.25,
-             
                           child: Center(
-                              child: Lottie.asset("lib/assets/homepageAni.json"),
+                            child: Lottie.asset("lib/assets/homepageAni.json"),
                           ),
                         ),
-                        
                       ],
                     ),
                   ],
@@ -126,7 +131,6 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                                 return IndividualMedicine(
                                   searchmed: searchQuery,
                                   token_: widget.token,
-
                                   givenDataSet: res,
                                 );
                               }
@@ -140,7 +144,7 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                       ),
                     ),
                     filled: true,
-                    fillColor: secondryColor,
+                    fillColor: secondaryColor,
                     enabledBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -200,8 +204,8 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                                       MaterialPageRoute(
                                         builder: (context) =>
                                             IndividualMedicine(
-                                              searchmed: "Synthroid",
-                                              token_: widget.token,
+                                          searchmed: "Synthroid",
+                                          token_: widget.token,
                                           givenDataSet: snapshot.data,
                                         ),
                                       ),
@@ -273,8 +277,8 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                                       MaterialPageRoute(
                                         builder: (context) =>
                                             IndividualMedicine(
-                                              searchmed: "Amoxicillin",
-                                              token_: widget.token,
+                                          searchmed: "Amoxicillin",
+                                          token_: widget.token,
                                           givenDataSet: snapshot.data,
                                         ),
                                       ),
@@ -346,8 +350,8 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                                       MaterialPageRoute(
                                         builder: (context) =>
                                             IndividualMedicine(
-                                              searchmed: "Norvasc",
-                                              token_: widget.token,
+                                          searchmed: "Norvasc",
+                                          token_: widget.token,
                                           givenDataSet: snapshot.data,
                                         ),
                                       ),
@@ -446,8 +450,8 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(80)),
                                     child: Image(
-                                      image:
-                                          const AssetImage('lib/assets/doc.png'),
+                                      image: const AssetImage(
+                                          'lib/assets/doc.png'),
                                       height: screenHeight * 0.1,
                                     ),
                                   ),
@@ -498,8 +502,8 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(80)),
                                     child: Image(
-                                      image:
-                                          const AssetImage('lib/assets/doc.png'),
+                                      image: const AssetImage(
+                                          'lib/assets/doc.png'),
                                       height: screenHeight * 0.1,
                                     ),
                                   ),
@@ -550,8 +554,8 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(80)),
                                     child: Image(
-                                      image:
-                                          const AssetImage('lib/assets/doc.png'),
+                                      image: const AssetImage(
+                                          'lib/assets/doc.png'),
                                       height: screenHeight * 0.1,
                                     ),
                                   ),

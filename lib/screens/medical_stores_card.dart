@@ -54,7 +54,7 @@ class _MedicalStoresCardState extends State<MedicalStoresCard> {
                                 Text(
                                   snapshot.data[widget.value]["shopName"],
                                   style: TextStyle(
-                                    color: secondryColor,
+                                    color: secondaryColor,
                                     fontSize: relHeight / 45,
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -70,7 +70,7 @@ class _MedicalStoresCardState extends State<MedicalStoresCard> {
                                     Text(
                                       ' 1.2 Km',
                                       style: TextStyle(
-                                          color: secondryColor,
+                                          color: secondaryColor,
                                           fontSize: relHeight / 50),
                                     ),
                                     SizedBox(
@@ -84,7 +84,7 @@ class _MedicalStoresCardState extends State<MedicalStoresCard> {
                                     Text(
                                       ' 4.6/5',
                                       style: TextStyle(
-                                          color: secondryColor,
+                                          color: secondaryColor,
                                           fontSize: relHeight / 50),
                                     ),
                                   ],
@@ -124,7 +124,7 @@ class _MedicalStoresCardState extends State<MedicalStoresCard> {
                             child: Text(
                           '₹ 250',
                           style: TextStyle(
-                              color: secondryColor,
+                              color: secondaryColor,
                               fontWeight: FontWeight.w500),
                         )),
                       )),

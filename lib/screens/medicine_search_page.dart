@@ -25,7 +25,7 @@ class MedicineSearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     double relative = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: secondryColor,
+      backgroundColor: secondaryColor,
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
@@ -81,11 +81,9 @@ class MedicineSearchPage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                              IndividualMedicine(
-                                searchmed: "Synthroid",
-                            
-                                token_: "awdwad",
+                          builder: (context) => IndividualMedicine(
+                            searchmed: "Synthroid",
+                            token_: "awdwad",
                             givenDataSet: snapshot.data,
                           ),
                         ),
