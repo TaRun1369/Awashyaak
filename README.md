@@ -1,5 +1,5 @@
 # Awashyak - Emergency Medicine Delivery Platform
-===============================================
+
 
 Awashyak is a software solution aimed at improving the speed and accessibility of the healthcare delivery system during emergencies. This project leverages technology to provide quicker access to essential medicines in times of need. The name "Awashyak" itself signifies its purpose, meaning "emergency" in the local language.
 
