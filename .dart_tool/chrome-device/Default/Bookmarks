@@ -1,0 +1,69 @@
+{
+   "checksum": "7376f581dd42d811ba9829783f1902ed",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13340999613299614",
+            "date_last_used": "0",
+            "guid": "19fc6942-0e59-4e4a-bd32-111523c96f33",
+            "id": "9",
+            "name": "Lenovo Support",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://support.lenovo.com/"
+         }, {
+            "date_added": "13340999613299491",
+            "date_last_used": "0",
+            "guid": "3a61ae3d-2430-40b1-a912-26a556926460",
+            "id": "8",
+            "name": "Lenovo",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://www.lenovo.com/"
+         }, {
+            "date_added": "13340999613298691",
+            "date_last_used": "0",
+            "guid": "7391949c-8c44-49ca-9739-6f209f0f91ee",
+            "id": "7",
+            "name": "McAfee",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://www.mcafee.com/consumer/v/browserfav/lenovo.html"
+         } ],
+         "date_added": "13340999612929702",
+         "date_last_used": "0",
+         "date_modified": "13340999613299614",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Favorites bar",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13340999612929703",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13340999612929705",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile favorites",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

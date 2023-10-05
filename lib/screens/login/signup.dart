@@ -182,6 +182,7 @@ class SignUp extends StatelessWidget {
                     MaterialPageRoute(
                       builder: ((context) {
                         return HomePageCustomer(
+                          email: emailcontroller.text,
                           token: token_,
                         );
                       }),
