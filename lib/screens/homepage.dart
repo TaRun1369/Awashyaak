@@ -1,3 +1,4 @@
+import '../components/Drawer/my_drawer.dart';
 import '../constants.dart';
 import '../screens/chatGPT.dart';
 import '../screens/individual_medicine_screen.dart';
@@ -13,7 +14,8 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 
 class HomePageCustomer extends StatefulWidget {
   final String token;
-  const HomePageCustomer({super.key, required this.token});
+  final String email ;
+  const HomePageCustomer({super.key, required this.token,required this.email});
 
   @override
   State<HomePageCustomer> createState() => _HomePageCustomerState();
@@ -59,7 +61,19 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
         actions: <Widget>[IconButton(onPressed: (() => Navigator.pop(context)), icon: const Icon(Icons.exit_to_app),)],
         backgroundColor: primaryColor,
       ),
-      drawer:  const Drawer(backgroundColor: Colors.white,),
+      drawer: MyDrawer(email: widget.email),
+      // Drawer(
+      //   child: SingleChildScrollView(
+      //     child: Container(
+      //       child: Column(
+      //         children: [
+      //           MyDrawer(email: widget.email,),
+      //           // MyDrawerList(),
+      //         ],
+      //       ),
+      //     ),
+      //   ),
+      // ),
       body: SingleChildScrollView(
         child: Column(
           verticalDirection: VerticalDirection.down,

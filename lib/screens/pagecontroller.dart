@@ -1,18 +1,18 @@
 // import '../screens/homePage.dart';
 // import 'package:flutter/material.dart';
 // import 'package:google_nav_bar/google_nav_bar.dart';
-
+//
 // class PageController extends StatefulWidget {
 //   const PageController({super.key});
-
+//
 //   @override
 //   State<PageController> createState() => _PageControllerState();
 // }
-
+//
 // class _PageControllerState extends State<PageController> {
 //   final PageController controller = PageController();
-
-  
+//
+//
 //   int index = 0;
 //   var listScrollController = new ScrollController();
 //   @override
