@@ -1,5 +1,7 @@
 import 'package:awashyak_v1/integration/seller.dart';
+import 'package:awashyak_v1/screens/login/validity_checks.dart';
 import 'package:awashyak_v1/screens/shopkeeperLogin/map.dart';
+import 'package:fancy_password_field/fancy_password_field.dart';
 
 import '../../screens/shopkeeper/homepageShop.dart';
 
@@ -13,14 +15,30 @@ class SignUpShopkeeper extends StatelessWidget {
   late String placeID;
   SignUpShopkeeper({Key? key}) : super(key: key);
 
-  TextEditingController namecontroller = TextEditingController();
-  TextEditingController shopnamecontroller = TextEditingController();
-  TextEditingController addresscontroller = TextEditingController();
-  TextEditingController mobilecontroller = TextEditingController();
-  TextEditingController emailcontroller = TextEditingController();
-  TextEditingController licencecontroller = TextEditingController();
-  TextEditingController passwordcontroller = TextEditingController();
-  TextEditingController cpasswordcontroller = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _shopNameController = TextEditingController();
+  final TextEditingController _addressController = TextEditingController();
+  final TextEditingController _mobileController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _licenceController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _cPasswordController = TextEditingController();
+
+  bool validityCheck(){
+    SignUpCheck check = SignUpCheck(_passwordController,
+        _cPasswordController, _mobileController,_emailController);
+    if (check.emptyCheck()&&check.mobileCheck() &&
+        check.passwordIdentityCheck() &&
+        check.emailCheck() &&
+        check.multipleEmptyCheck(args: [_nameController,_shopNameController,_addressController,_licenceController])
+      )
+    {
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 
   // name:req.body.name,
   //           shopName:req.body.shopName,
@@ -88,12 +106,12 @@ class SignUpShopkeeper extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40.0),
                   child: TextField(
-                    controller: namecontroller,
+                    controller: _nameController,
                     keyboardType: TextInputType.text,
                     onChanged: (value) => {},
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondryColor,
+                      fillColor: secondaryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -109,12 +127,12 @@ class SignUpShopkeeper extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40.0),
                   child: TextFormField(
-                    controller: shopnamecontroller,
+                    controller: _shopNameController,
                     keyboardType: TextInputType.text,
                     onChanged: (value) => {},
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondryColor,
+                      fillColor: secondaryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -130,12 +148,12 @@ class SignUpShopkeeper extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40.0),
                   child: TextFormField(
-                    controller: addresscontroller,
+                    controller: _addressController,
                     keyboardType: TextInputType.text,
                     onChanged: (value) => {},
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondryColor,
+                      fillColor: secondaryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -151,12 +169,12 @@ class SignUpShopkeeper extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40.0),
                   child: TextFormField(
-                    controller: mobilecontroller,
+                    controller: _mobileController,
                     keyboardType: TextInputType.text,
                     onChanged: (value) => {},
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondryColor,
+                      fillColor: secondaryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -172,12 +190,12 @@ class SignUpShopkeeper extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40.0),
                   child: TextFormField(
-                    controller: emailcontroller,
+                    controller: _emailController,
                     keyboardType: TextInputType.text,
                     onChanged: (value) => {},
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondryColor,
+                      fillColor: secondaryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -193,12 +211,12 @@ class SignUpShopkeeper extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40.0),
                   child: TextFormField(
-                    controller: licencecontroller,
+                    controller: _licenceController,
                     keyboardType: TextInputType.text,
                     onChanged: (value) => {},
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondryColor,
+                      fillColor: secondaryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -213,13 +231,13 @@ class SignUpShopkeeper extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40.0),
-                  child: TextFormField(
-                    controller: passwordcontroller,
+                  child: FancyPasswordField(
+                    controller: _passwordController,
                     keyboardType: TextInputType.text,
                     onChanged: (value) => {},
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondryColor,
+                      fillColor: secondaryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -234,13 +252,14 @@ class SignUpShopkeeper extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40.0),
-                  child: TextFormField(
-                    controller: cpasswordcontroller,
+                  child: FancyPasswordField(
+                    controller: _cPasswordController,
                     keyboardType: TextInputType.text,
-                    onChanged: (value) => {},
+                    hasStrengthIndicator: false,
+                    hasValidationRules: false,
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondryColor,
+                      fillColor: secondaryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -273,32 +292,35 @@ class SignUpShopkeeper extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () async {
-                    List ret = await signUpShopkeeper(
-                        namecontroller.text,
-                        shopnamecontroller.text,
-                        addresscontroller.text,
-                        int.parse(mobilecontroller.text),
-                        licencecontroller.text,
-                        emailcontroller.text,
-                        passwordcontroller.text,
-                        cpasswordcontroller.text,
-                        "17.54151",
-                        "73.4353",
-                        placeID);
-                    // print(ret);
-                    // ignore: use_build_context_synchronously
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: ((context) {
-                          return HomePageShop(
-                            shopName: ret[2],
-                            shopid: ret[1],
-                            token: ret[0],
-                          );
-                        }),
-                      ),
-                    );
+                    if (validityCheck())
+                    {
+                      List ret = await signUpShopkeeper(
+                          _nameController.text,
+                          _shopNameController.text,
+                          _addressController.text,
+                          int.parse(_mobileController.text),
+                          _licenceController.text,
+                          _emailController.text,
+                          _passwordController.text,
+                          _cPasswordController.text,
+                          "17.54151",
+                          "73.4353",
+                          placeID);
+                      // print(ret);
+                      // ignore: use_build_context_synchronously
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: ((context) {
+                            return HomePageShop(
+                              shopName: ret[2],
+                              shopid: ret[1],
+                              token: ret[0],
+                            );
+                          }),
+                        ),
+                      );
+                    }
                   },
                   child: Container(
                     decoration: BoxDecoration(
