@@ -48,6 +48,8 @@ dependencies:
   google_maps_webservice: ^0.0.20-nullsafety.5
   google_maps_flutter: ^2.2.5
   lottie: ^2.3.2
+  fluttertoast: ^8.2.2
+  fancy_password_field: ^2.0.0
 
 dev_dependencies:
 

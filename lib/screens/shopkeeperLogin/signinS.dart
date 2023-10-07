@@ -74,7 +74,7 @@ class SignInShopkeeper extends StatelessWidget {
                   onChanged: (value) => {},
                   decoration: const InputDecoration(
                     filled: true,
-                    fillColor: secondaryColor,
+                    fillColor: secondryColor,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -96,7 +96,7 @@ class SignInShopkeeper extends StatelessWidget {
                   hasValidationRules: false,
                   decoration: const InputDecoration(
                     filled: true,
-                    fillColor: secondaryColor,
+                    fillColor: secondryColor,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       borderSide: BorderSide(color: primaryColor, width: 3.0),

@@ -24,18 +24,21 @@ class SignUpShopkeeper extends StatelessWidget {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _cPasswordController = TextEditingController();
 
-  bool validityCheck(){
-    SignUpCheck check = SignUpCheck(_passwordController,
-        _cPasswordController, _mobileController,_emailController);
-    if (check.emptyCheck()&&check.mobileCheck() &&
+  bool validityCheck() {
+    SignUpCheck check = SignUpCheck(_passwordController, _cPasswordController,
+        _mobileController, _emailController);
+    if (check.emptyCheck() &&
+        check.mobileCheck() &&
         check.passwordIdentityCheck() &&
         check.emailCheck() &&
-        check.multipleEmptyCheck(args: [_nameController,_shopNameController,_addressController,_licenceController])
-      )
-    {
+        check.multipleEmptyCheck(args: [
+          _nameController,
+          _shopNameController,
+          _addressController,
+          _licenceController
+        ])) {
       return true;
-    }
-    else{
+    } else {
       return false;
     }
   }
@@ -111,7 +114,7 @@ class SignUpShopkeeper extends StatelessWidget {
                     onChanged: (value) => {},
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondaryColor,
+                      fillColor: secondryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -132,7 +135,7 @@ class SignUpShopkeeper extends StatelessWidget {
                     onChanged: (value) => {},
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondaryColor,
+                      fillColor: secondryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -153,7 +156,7 @@ class SignUpShopkeeper extends StatelessWidget {
                     onChanged: (value) => {},
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondaryColor,
+                      fillColor: secondryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -174,7 +177,7 @@ class SignUpShopkeeper extends StatelessWidget {
                     onChanged: (value) => {},
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondaryColor,
+                      fillColor: secondryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -195,7 +198,7 @@ class SignUpShopkeeper extends StatelessWidget {
                     onChanged: (value) => {},
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondaryColor,
+                      fillColor: secondryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -216,7 +219,7 @@ class SignUpShopkeeper extends StatelessWidget {
                     onChanged: (value) => {},
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondaryColor,
+                      fillColor: secondryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -237,7 +240,7 @@ class SignUpShopkeeper extends StatelessWidget {
                     onChanged: (value) => {},
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondaryColor,
+                      fillColor: secondryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -259,7 +262,7 @@ class SignUpShopkeeper extends StatelessWidget {
                     hasValidationRules: false,
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondaryColor,
+                      fillColor: secondryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -292,8 +295,7 @@ class SignUpShopkeeper extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () async {
-                    if (validityCheck())
-                    {
+                    if (validityCheck()) {
                       List ret = await signUpShopkeeper(
                           _nameController.text,
                           _shopNameController.text,

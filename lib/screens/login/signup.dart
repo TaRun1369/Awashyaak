@@ -75,7 +75,7 @@ class SignUp extends StatelessWidget {
                     onChanged: (value) => {},
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondaryColor,
+                      fillColor: secondryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -96,7 +96,7 @@ class SignUp extends StatelessWidget {
                     onChanged: (value) => {},
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondaryColor,
+                      fillColor: secondryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -118,7 +118,7 @@ class SignUp extends StatelessWidget {
                     onChanged: (value) => {},
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondaryColor,
+                      fillColor: secondryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -139,7 +139,7 @@ class SignUp extends StatelessWidget {
                     onChanged: (value) => {},
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondaryColor,
+                      fillColor: secondryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -162,7 +162,7 @@ class SignUp extends StatelessWidget {
                     hasValidationRules: false,
                     decoration: const InputDecoration(
                       filled: true,
-                      fillColor: secondaryColor,
+                      fillColor: secondryColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                         borderSide: BorderSide(color: primaryColor, width: 3.0),
@@ -178,8 +178,11 @@ class SignUp extends StatelessWidget {
                 InkWell(
                   onTap: () async {
                     SignUpCheck check = SignUpCheck(passwordController,
-                        cPasswordController, mobileController,emailController);
-                    if (check.emptyCheck()&&check.mobileCheck() && check.passwordIdentityCheck() && check.emailCheck()) {
+                        cPasswordController, mobileController, emailController);
+                    if (check.emptyCheck() &&
+                        check.mobileCheck() &&
+                        check.passwordIdentityCheck() &&
+                        check.emailCheck()) {
                       String token_ = await signUpCustomer(
                           nameController.text,
                           int.parse(mobileController.text),
