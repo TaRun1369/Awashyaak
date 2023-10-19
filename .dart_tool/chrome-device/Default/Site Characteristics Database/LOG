@@ -1,13 +1,2 @@
-2023/10/18-00:01:18.896 5c68 Reusing MANIFEST C:\Users\tarun\AppData\Local\Temp\flutter_tools.b584594c\flutter_tools_chrome_device.a996d801\Default\Site Characteristics Database/MANIFEST-000001
-2023/10/18-00:01:18.899 5c68 Recovering log #3
-2023/10/18-00:01:18.899 5c68 Level-0 table #13: started
-2023/10/18-00:01:18.967 5c68 Level-0 table #13: 194 bytes OK
-2023/10/18-00:01:18.967 5c68 Recovering log #6
-2023/10/18-00:01:18.968 5c68 Level-0 table #14: started
-2023/10/18-00:01:18.977 5c68 Level-0 table #14: 181 bytes OK
-2023/10/18-00:01:18.978 5c68 Recovering log #10
-2023/10/18-00:01:18.980 5c68 Reusing old log C:\Users\tarun\AppData\Local\Temp\flutter_tools.b584594c\flutter_tools_chrome_device.a996d801\Default\Site Characteristics Database/000010.log 
-2023/10/18-00:01:18.985 5c68 Delete type=0 #3
-2023/10/18-00:01:18.985 5c68 Delete type=2 #4
-2023/10/18-00:01:18.985 5c68 Delete type=2 #6
-2023/10/18-00:01:18.985 5c68 Delete type=0 #6
+2023/10/19-11:54:43.370 78e4 Creating DB C:\Users\tarun\AppData\Local\Temp\flutter_tools.c0961030\flutter_tools_chrome_device.2c111f9c\Default\Site Characteristics Database since it was missing.
+2023/10/19-11:54:43.405 78e4 Reusing MANIFEST C:\Users\tarun\AppData\Local\Temp\flutter_tools.c0961030\flutter_tools_chrome_device.2c111f9c\Default\Site Characteristics Database/MANIFEST-000001

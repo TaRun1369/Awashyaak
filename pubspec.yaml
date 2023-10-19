@@ -49,6 +49,8 @@ dependencies:
   google_maps_flutter: ^2.2.5
   lottie: ^2.3.2
   fl_chart: ^0.63.0
+  fluttertoast: ^8.2.2
+  fancy_password_field: ^2.0.0
 
 dev_dependencies:
 
