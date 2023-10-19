@@ -1,5 +1,6 @@
-import 'package:awashyak_v1/screens/shopkeeper/homepageShop.dart';
-
+import 'package:awashyak_v1/screens/login/validity_checks.dart';
+import 'package:awashyak_v1/widgets/toast_notifications.dart';
+import 'package:fancy_password_field/fancy_password_field.dart';
 
 import '../../screens/homepage.dart';
 
@@ -10,9 +11,9 @@ import 'package:flutter/material.dart';
 class SignIn extends StatelessWidget {
   SignIn({Key? key}) : super(key: key);
 
-  TextEditingController emailcontroller = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
 
-  TextEditingController passwordcontroller = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +66,7 @@ class SignIn extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40.0),
                 child: TextField(
-                  controller: emailcontroller,
+                  controller: _emailController,
                   keyboardType: TextInputType.text,
                   onChanged: (value) => {},
                   decoration: const InputDecoration(
@@ -85,10 +86,11 @@ class SignIn extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40.0),
-                child: TextFormField(
-                  controller: passwordcontroller,
+                child: FancyPasswordField(
+                  controller: _passwordController,
                   keyboardType: TextInputType.text,
-                  onChanged: (value) => {},
+                  hasStrengthIndicator: false,
+                  hasValidationRules: false,
                   decoration: const InputDecoration(
                     filled: true,
                     fillColor: secondryColor,
@@ -107,20 +109,27 @@ class SignIn extends StatelessWidget {
               Flexible(
                 child: InkWell(
                   onTap: () async {
-                    String token_ = await signInCustomer(
-                        emailcontroller.text, passwordcontroller.text);
-                    // ignore: use_build_context_synchronously
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: ((context) {
-                          return HomePageCustomer(
-                            email: emailcontroller.text,
-                            token: token_,
-                          );
-                        }),
-                      ),
-                    );
+                    final check =
+                        SignInCheck(_emailController, _passwordController);
+                    if (check.signInCheck()) {
+                      String token_ = await signInCustomer(
+                          _emailController.text, _passwordController.text);
+                      print(token_);
+                      if (token_ != "Error") {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: ((context) {
+                              return HomePageCustomer(
+                                token: token_, email: '',
+                              );
+                            }),
+                          ),
+                        );
+                      } else {
+                        showNotification("Please enter correct credentials");
+                      }
+                    }
                   },
                   child: Container(
                     decoration: BoxDecoration(
