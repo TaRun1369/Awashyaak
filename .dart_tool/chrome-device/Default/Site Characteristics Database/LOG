@@ -1,9 +1,13 @@
-2023/10/12-14:37:51.370 37f0 Reusing MANIFEST C:\Users\tarun\AppData\Local\Temp\flutter_tools.fa9164e5\flutter_tools_chrome_device.6a93de27\Default\Site Characteristics Database/MANIFEST-000001
-2023/10/12-14:37:51.387 4ea8 Compacting 4@0 + 0@1 files
-2023/10/12-14:37:51.423 4ea8 Generated table #11@0: 2 keys, 194 bytes
-2023/10/12-14:37:51.424 4ea8 Compacted 4@0 + 0@1 files => 194 bytes
-2023/10/12-14:37:51.427 4ea8 compacted to: files[ 0 1 0 0 0 0 0 ]
-2023/10/12-14:37:51.430 4ea8 Delete type=2 #4
-2023/10/12-14:37:51.430 4ea8 Delete type=2 #6
-2023/10/12-14:37:51.430 4ea8 Delete type=2 #7
-2023/10/12-14:37:51.431 4ea8 Delete type=2 #8
+2023/10/18-00:01:18.896 5c68 Reusing MANIFEST C:\Users\tarun\AppData\Local\Temp\flutter_tools.b584594c\flutter_tools_chrome_device.a996d801\Default\Site Characteristics Database/MANIFEST-000001
+2023/10/18-00:01:18.899 5c68 Recovering log #3
+2023/10/18-00:01:18.899 5c68 Level-0 table #13: started
+2023/10/18-00:01:18.967 5c68 Level-0 table #13: 194 bytes OK
+2023/10/18-00:01:18.967 5c68 Recovering log #6
+2023/10/18-00:01:18.968 5c68 Level-0 table #14: started
+2023/10/18-00:01:18.977 5c68 Level-0 table #14: 181 bytes OK
+2023/10/18-00:01:18.978 5c68 Recovering log #10
+2023/10/18-00:01:18.980 5c68 Reusing old log C:\Users\tarun\AppData\Local\Temp\flutter_tools.b584594c\flutter_tools_chrome_device.a996d801\Default\Site Characteristics Database/000010.log 
+2023/10/18-00:01:18.985 5c68 Delete type=0 #3
+2023/10/18-00:01:18.985 5c68 Delete type=2 #4
+2023/10/18-00:01:18.985 5c68 Delete type=2 #6
+2023/10/18-00:01:18.985 5c68 Delete type=0 #6
