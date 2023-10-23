@@ -1,4 +1,6 @@
-import '../components/Drawer/my_drawer.dart';
+import 'package:awashyak_v1/screens/seeAllDoctors.dart';
+import 'package:awashyak_v1/screens/seeAllMedicine.dart';
+
 import '../constants.dart';
 import '../screens/chatGPT.dart';
 import '../screens/individual_medicine_screen.dart';
@@ -14,8 +16,9 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 
 class HomePageCustomer extends StatefulWidget {
   final String token;
-  final String email ;
-  const HomePageCustomer({super.key, required this.token,required this.email});
+
+  final String email;
+  const HomePageCustomer({super.key, required this.email, required this.token});
 
   @override
   State<HomePageCustomer> createState() => _HomePageCustomerState();
@@ -61,19 +64,7 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
         actions: <Widget>[IconButton(onPressed: (() => Navigator.pop(context)), icon: const Icon(Icons.exit_to_app),)],
         backgroundColor: primaryColor,
       ),
-      drawer: MyDrawer(email: widget.email),
-      // Drawer(
-      //   child: SingleChildScrollView(
-      //     child: Container(
-      //       child: Column(
-      //         children: [
-      //           MyDrawer(email: widget.email,),
-      //           // MyDrawerList(),
-      //         ],
-      //       ),
-      //     ),
-      //   ),
-      // ),
+      drawer:  const Drawer(backgroundColor: lightColor,),
       body: SingleChildScrollView(
         child: Column(
           verticalDirection: VerticalDirection.down,
@@ -104,12 +95,12 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                         // ),
                         Container(
                           height: screenHeight * 0.25,
-             
+
                           child: Center(
                               child: Lottie.asset("lib/assets/homepageAni.json"),
                           ),
                         ),
-                        
+
                       ],
                     ),
                   ],
@@ -167,24 +158,38 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
             ),
             Padding(
               padding: EdgeInsets.all(screenHeight * 0.03),
-              child: Row(
-                children: const [
-                  Text(
-                    "  Popular Products -",
+              child:  Row(
+                children: [
+                  const Text(
+                    "  POPULAR PRODUCTS : ",
                     style: TextStyle(
                       color: primaryColor,
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Spacer(),
-                  Text(
-                    "See All",
-                    style: TextStyle(
-                      color: primaryColor,
-                      fontSize: 15,
+                  const Spacer(),
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                SeeAllMedicine(
+                                  token: widget.token,
+                                )
+                          ),
+                        );
+                    },
+                    child:const Text(
+                      "See All",
+                      style: TextStyle(
+                        color: primaryColor,
+                        decoration: TextDecoration.underline,
+                        fontSize: 15,
+                      ),
                     ),
-                  ),
+                  )
                 ],
               ),
             ),
@@ -193,7 +198,7 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
               child: Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: screenHeight * 0.03),
+                    padding: EdgeInsets.only(left: screenHeight * 0.03,right: screenHeight * 0.015 ),
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Stack(
@@ -266,7 +271,7 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: screenHeight * 0.03),
+                    padding: EdgeInsets.only(left: screenHeight * 0.015,right: screenHeight * 0.015 ),
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Stack(
@@ -339,7 +344,7 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: screenHeight * 0.03),
+                    padding: EdgeInsets.only(left: screenHeight * 0.015,right: screenHeight * 0.03),
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Stack(
@@ -414,22 +419,41 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                 ],
               ),
             ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: EdgeInsets.only(
-                  top: screenHeight * 0.03,
-                  left: screenWidth * 0.1,
-                  bottom: screenHeight * 0.03,
-                ),
-                child: const Text(
-                  "Available Doctors -",
-                  style: TextStyle(
-                    color: primaryColor,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+            Padding(
+              padding: EdgeInsets.all(screenHeight * 0.03),
+              child:  Row(
+                children: [
+                  const Text(
+                    "  AVAILABLE DOCTORS : ",
+                    style: TextStyle(
+                      color: primaryColor,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
+                  const Spacer(),
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                SeeAllDoctor(
+                                  token: widget.token,
+                                )
+                          ),
+                        );
+                    },
+                    child:const Text(
+                      "See All",
+                      style: TextStyle(
+                        color: primaryColor,
+                        decoration: TextDecoration.underline,
+                        fontSize: 15,
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
             SingleChildScrollView(
@@ -437,7 +461,7 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
               child: Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: screenHeight * 0.03),
+                    padding: EdgeInsets.only(left: screenHeight * 0.03, right: screenHeight * 0.015, bottom: screenHeight * 0.03 ),
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Stack(
@@ -489,7 +513,7 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: screenHeight * 0.03),
+                    padding: EdgeInsets.only(left: screenHeight * 0.015,right: screenHeight * 0.015 ,bottom: screenHeight * 0.03 ),
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Stack(
@@ -541,7 +565,59 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: screenHeight * 0.03),
+                    padding: EdgeInsets.only(left: screenHeight * 0.015,right: screenHeight * 0.015 ,bottom: screenHeight * 0.03 ),
+                    child: ClipRRect(
+                      borderRadius: const BorderRadius.all(Radius.circular(15)),
+                      child: Stack(
+                        children: [
+                          Container(
+                            color: homeIndiBg,
+                            height: screenHeight * 0.2,
+                            width: screenWidth * 0.35,
+                          ),
+                          SizedBox(
+                            height: screenHeight * 0.2,
+                            width: screenWidth * 0.35,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 8.0),
+                                  child: ClipRRect(
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(80)),
+                                    child: Image(
+                                      image:
+                                      const AssetImage('lib/assets/doc.png'),
+                                      height: screenHeight * 0.1,
+                                    ),
+                                  ),
+                                ),
+                                const Text(
+                                  "Dr.Darshan",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: primaryColor,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                const Text(
+                                  "MBBS",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: primaryColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: screenHeight * 0.015,right: screenHeight * 0.03, bottom: screenHeight * 0.03 ),
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Stack(
