@@ -138,7 +138,7 @@ class _SeeAllMedicineState extends State<SeeAllMedicine> {
                                               children: [
                                                 Image(
                                                   image: const AssetImage(
-                                                      'lib/assets/med0.jpg'),
+                                                      'lib/assets/med.png'),
                                                   height: screenHeight * 0.2,
                                                 ),
                                               ]
