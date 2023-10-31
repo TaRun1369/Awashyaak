@@ -1,5 +1,3 @@
-import 'package:flutter/src/material/ink_well.dart';
-
 class Data {
   String? id;
   String? genericName;
@@ -10,15 +8,15 @@ class Data {
   String? description;
 
   //Now let's create the constructor
-  Data(
-      {this.id,
-      this.genericName,
-      this.labelerName,
-      this.brandName,
-      this.activeIngredients,
-      this.strenght,
-      this.description,
-      });
+  Data({
+    this.id,
+    this.genericName,
+    this.labelerName,
+    this.brandName,
+    this.activeIngredients,
+    this.strenght,
+    this.description,
+  });
 
   //And now let's create the function that will map the json into a list
   factory Data.fromJson(Map<String, dynamic> json) {
@@ -30,7 +28,6 @@ class Data {
       activeIngredients: json['active_ingredients'][0]['name'],
       strenght: json['active_ingredients'][0]['strenght'],
       description: json['packaging'][0]['description'],
-      
     );
   }
 }

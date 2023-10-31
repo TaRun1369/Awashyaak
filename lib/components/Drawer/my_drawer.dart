@@ -2,17 +2,15 @@
 //
 import 'package:flutter/material.dart';
 
-import '../../screens/contacts.dart';
 import '../../screens/dashboard.dart';
 import '../../screens/notifications.dart';
 import 'my_drawer_header.dart';
 
 class MyDrawer extends StatefulWidget {
-  final String email ;
-  const MyDrawer({required this.email}) ;
+  final String email;
+  const MyDrawer({required this.email});
   @override
-  _MyDrawerState createState() => _MyDrawerState(
-  );
+  _MyDrawerState createState() => _MyDrawerState();
 }
 
 // class _MyHeaderDrawerState extends State<MyHeaderDrawer> {
@@ -63,19 +61,19 @@ class _MyDrawerState extends State<MyDrawer> {
     var container;
     if (currentPage == DrawerSections.dashboard) {
       container = DashboardPage();
-    }   else if (currentPage == DrawerSections.notifications) {
+    } else if (currentPage == DrawerSections.notifications) {
       container = NotificationsPage();
     }
     return Drawer(
         child: SingleChildScrollView(
-          child: Container(
-            child: Column(
-              children: [
-                MyHeaderDrawer(),
-                MyDrawerList(),
-              ],
-            ),
-          ),
+      child: Container(
+        child: Column(
+          children: [
+            MyHeaderDrawer(),
+            MyDrawerList(),
+          ],
+        ),
+      ),
     ));
   }
 
@@ -89,10 +87,6 @@ class _MyDrawerState extends State<MyDrawer> {
         children: [
           menuItem(1, "Dashboard", Icons.dashboard_outlined,
               currentPage == DrawerSections.dashboard ? true : false),
-
-
-
-
           menuItem(2, "Notifications", Icons.notifications_outlined,
               currentPage == DrawerSections.notifications ? true : false),
           Divider(),
@@ -103,7 +97,6 @@ class _MyDrawerState extends State<MyDrawer> {
           Divider(),
           menuItem(5, "Logout", Icons.privacy_tip_outlined,
               currentPage == DrawerSections.Logout ? true : false),
-
         ],
       ),
     );
@@ -118,14 +111,13 @@ class _MyDrawerState extends State<MyDrawer> {
           setState(() {
             if (id == 1) {
               currentPage = DrawerSections.dashboard;
-            }  else if (id == 2) {
+            } else if (id == 2) {
               currentPage = DrawerSections.notifications;
             } else if (id == 3) {
               currentPage = DrawerSections.privacy_policy;
             } else if (id == 4) {
               currentPage = DrawerSections.send_feedback;
-            }
-            else if (id == 5) {
+            } else if (id == 5) {
               currentPage = DrawerSections.Logout;
               Navigator.pop(context);
             }
