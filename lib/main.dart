@@ -1,9 +1,4 @@
-import '../screens/chatGPT.dart';
-import '../screens/individual_medicine_screen.dart';
 import 'screens/login/startupPage.dart';
-import '../screens/medicine_search_page.dart';
-import '../screens/shopkeeper/homepageShop.dart';
-import '../utilities/test1.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,8 +18,6 @@ class MyApp extends StatelessWidget {
       // home: TestPage() ,
       // home: HomePageShop(),
       home: StartUp(),
-
-    ); 
+    );
   }
 }
-
