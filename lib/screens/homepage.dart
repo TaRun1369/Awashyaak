@@ -54,17 +54,24 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
       backgroundColor: secondryColor,
       appBar: AppBar(
         centerTitle: true,
-        title:  const Text(
+        title: const Text(
           "AWASHYAK",
           style: TextStyle(
             color: lightColor,
             fontSize: 24,
           ),
         ),
-        actions: <Widget>[IconButton(onPressed: (() => Navigator.pop(context)), icon: const Icon(Icons.exit_to_app),)],
+        actions: <Widget>[
+          IconButton(
+            onPressed: (() => Navigator.pop(context)),
+            icon: const Icon(Icons.exit_to_app),
+          )
+        ],
         backgroundColor: primaryColor,
       ),
-      drawer:  const Drawer(backgroundColor: lightColor,),
+      drawer: const Drawer(
+        backgroundColor: lightColor,
+      ),
       body: SingleChildScrollView(
         child: Column(
           verticalDirection: VerticalDirection.down,
@@ -95,12 +102,10 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                         // ),
                         Container(
                           height: screenHeight * 0.25,
-
                           child: Center(
-                              child: Lottie.asset("lib/assets/homepageAni.json"),
+                            child: Lottie.asset("lib/assets/homepageAni.json"),
                           ),
                         ),
-
                       ],
                     ),
                   ],
@@ -131,7 +136,6 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                                 return IndividualMedicine(
                                   searchmed: searchQuery,
                                   token_: widget.token,
-
                                   givenDataSet: res,
                                 );
                               }
@@ -158,7 +162,7 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
             ),
             Padding(
               padding: EdgeInsets.all(screenHeight * 0.03),
-              child:  Row(
+              child: Row(
                 children: [
                   const Text(
                     "  POPULAR PRODUCTS : ",
@@ -170,18 +174,16 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                   ),
                   const Spacer(),
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                SeeAllMedicine(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SeeAllMedicine(
                                   token: widget.token,
-                                )
-                          ),
-                        );
+                                )),
+                      );
                     },
-                    child:const Text(
+                    child: const Text(
                       "See All",
                       style: TextStyle(
                         color: primaryColor,
@@ -198,7 +200,8 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
               child: Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: screenHeight * 0.03,right: screenHeight * 0.015 ),
+                    padding: EdgeInsets.only(
+                        left: screenHeight * 0.03, right: screenHeight * 0.015),
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Stack(
@@ -219,8 +222,8 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                                       MaterialPageRoute(
                                         builder: (context) =>
                                             IndividualMedicine(
-                                              searchmed: "Synthroid",
-                                              token_: widget.token,
+                                          searchmed: "Synthroid",
+                                          token_: widget.token,
                                           givenDataSet: snapshot.data,
                                         ),
                                       ),
@@ -237,7 +240,7 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                                       children: [
                                         Image(
                                           image: const AssetImage(
-                                              'lib/assets/med.png'),
+                                              'lib/assets/med0.jpg'),
                                           height: screenHeight * 0.13,
                                         ),
                                         Text(
@@ -271,7 +274,9 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: screenHeight * 0.015,right: screenHeight * 0.015 ),
+                    padding: EdgeInsets.only(
+                        left: screenHeight * 0.015,
+                        right: screenHeight * 0.015),
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Stack(
@@ -292,8 +297,8 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                                       MaterialPageRoute(
                                         builder: (context) =>
                                             IndividualMedicine(
-                                              searchmed: "Amoxicillin",
-                                              token_: widget.token,
+                                          searchmed: "Amoxicillin",
+                                          token_: widget.token,
                                           givenDataSet: snapshot.data,
                                         ),
                                       ),
@@ -310,7 +315,7 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                                       children: [
                                         Image(
                                           image: const AssetImage(
-                                              'lib/assets/med.png'),
+                                              'lib/assets/med1.jpg'),
                                           height: screenHeight * 0.13,
                                         ),
                                         Text(
@@ -344,7 +349,8 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: screenHeight * 0.015,right: screenHeight * 0.03),
+                    padding: EdgeInsets.only(
+                        left: screenHeight * 0.015, right: screenHeight * 0.03),
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Stack(
@@ -365,8 +371,8 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                                       MaterialPageRoute(
                                         builder: (context) =>
                                             IndividualMedicine(
-                                              searchmed: "Norvasc",
-                                              token_: widget.token,
+                                          searchmed: "Norvasc",
+                                          token_: widget.token,
                                           givenDataSet: snapshot.data,
                                         ),
                                       ),
@@ -383,7 +389,7 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                                       children: [
                                         Image(
                                           image: const AssetImage(
-                                              'lib/assets/med.png'),
+                                              'lib/assets/med2.jpg'),
                                           height: screenHeight * 0.13,
                                         ),
                                         Text(
@@ -421,7 +427,7 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
             ),
             Padding(
               padding: EdgeInsets.all(screenHeight * 0.03),
-              child:  Row(
+              child: Row(
                 children: [
                   const Text(
                     "  AVAILABLE DOCTORS : ",
@@ -433,18 +439,16 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                   ),
                   const Spacer(),
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                SeeAllDoctor(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SeeAllDoctor(
                                   token: widget.token,
-                                )
-                          ),
-                        );
+                                )),
+                      );
                     },
-                    child:const Text(
+                    child: const Text(
                       "See All",
                       style: TextStyle(
                         color: primaryColor,
@@ -461,7 +465,10 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
               child: Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: screenHeight * 0.03, right: screenHeight * 0.015, bottom: screenHeight * 0.03 ),
+                    padding: EdgeInsets.only(
+                        left: screenHeight * 0.03,
+                        right: screenHeight * 0.015,
+                        bottom: screenHeight * 0.03),
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Stack(
@@ -484,8 +491,8 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(80)),
                                     child: Image(
-                                      image:
-                                          const AssetImage('lib/assets/doc.png'),
+                                      image: const AssetImage(
+                                          'lib/assets/doc.png'),
                                       height: screenHeight * 0.1,
                                     ),
                                   ),
@@ -513,7 +520,10 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: screenHeight * 0.015,right: screenHeight * 0.015 ,bottom: screenHeight * 0.03 ),
+                    padding: EdgeInsets.only(
+                        left: screenHeight * 0.015,
+                        right: screenHeight * 0.015,
+                        bottom: screenHeight * 0.03),
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Stack(
@@ -536,8 +546,8 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(80)),
                                     child: Image(
-                                      image:
-                                          const AssetImage('lib/assets/doc.png'),
+                                      image: const AssetImage(
+                                          'lib/assets/doc.png'),
                                       height: screenHeight * 0.1,
                                     ),
                                   ),
@@ -565,7 +575,10 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: screenHeight * 0.015,right: screenHeight * 0.015 ,bottom: screenHeight * 0.03 ),
+                    padding: EdgeInsets.only(
+                        left: screenHeight * 0.015,
+                        right: screenHeight * 0.015,
+                        bottom: screenHeight * 0.03),
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Stack(
@@ -588,8 +601,8 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(80)),
                                     child: Image(
-                                      image:
-                                      const AssetImage('lib/assets/doc.png'),
+                                      image: const AssetImage(
+                                          'lib/assets/doc.png'),
                                       height: screenHeight * 0.1,
                                     ),
                                   ),
@@ -617,7 +630,10 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: screenHeight * 0.015,right: screenHeight * 0.03, bottom: screenHeight * 0.03 ),
+                    padding: EdgeInsets.only(
+                        left: screenHeight * 0.015,
+                        right: screenHeight * 0.03,
+                        bottom: screenHeight * 0.03),
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Stack(
@@ -640,8 +656,8 @@ class _HomePageCustomerState extends State<HomePageCustomer> {
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(80)),
                                     child: Image(
-                                      image:
-                                          const AssetImage('lib/assets/doc.png'),
+                                      image: const AssetImage(
+                                          'lib/assets/doc.png'),
                                       height: screenHeight * 0.1,
                                     ),
                                   ),
