@@ -4,11 +4,9 @@ import '../utilities/datamodel.dart';
 import '../utilities/medicineCall.dart';
 import 'package:flutter/material.dart';
 
-
-
 class SeeAllMedicine extends StatefulWidget {
   final String token;
-  const SeeAllMedicine({super.key,required this.token });
+  const SeeAllMedicine({super.key, required this.token});
 
   @override
   State<SeeAllMedicine> createState() => _SeeAllMedicineState();
@@ -23,53 +21,62 @@ class _SeeAllMedicineState extends State<SeeAllMedicine> {
     print(result);
     return result;
   }
+
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-        backgroundColor: secondryColor,
-        appBar: AppBar(
-          centerTitle: true,
-          title:  const Text(
-            "AWASHYAK",
-            style: TextStyle(
-              color: lightColor,
-              fontSize: 24,
-            ),
+      backgroundColor: secondryColor,
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text(
+          "AWASHYAK",
+          style: TextStyle(
+            color: lightColor,
+            fontSize: 24,
           ),
-          actions: <Widget>[IconButton(onPressed: (() => Navigator.pop(context)), icon: const Icon(Icons.exit_to_app),)],
-          backgroundColor: primaryColor,
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            verticalDirection: VerticalDirection.down,
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Align(
-                alignment: Alignment.center,
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    top: screenHeight * 0.03,
-                    left: screenWidth * 0.1,
-                    bottom: screenHeight * 0.03,
-                  ),
-                  child: const Text(
-                    "AVAILABLE MEDICINES ",
-                    style: TextStyle(
-                      color: primaryColor,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: (() => Navigator.pop(context)),
+            icon: const Icon(Icons.exit_to_app),
+          )
+        ],
+        backgroundColor: primaryColor,
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          verticalDirection: VerticalDirection.down,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Align(
+              alignment: Alignment.center,
+              child: Padding(
+                padding: EdgeInsets.only(
+                  top: screenHeight * 0.03,
+                  left: screenWidth * 0.1,
+                  bottom: screenHeight * 0.03,
+                ),
+                child: const Text(
+                  "AVAILABLE MEDICINES ",
+                  style: TextStyle(
+                    color: primaryColor,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
+            ),
             SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: screenHeight * 0.03, right: screenHeight * 0.03, bottom: screenHeight * 0.015 ),
+                    padding: EdgeInsets.only(
+                        left: screenHeight * 0.03,
+                        right: screenHeight * 0.03,
+                        bottom: screenHeight * 0.015),
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Stack(
@@ -90,8 +97,8 @@ class _SeeAllMedicineState extends State<SeeAllMedicine> {
                                       MaterialPageRoute(
                                         builder: (context) =>
                                             IndividualMedicine(
-                                              searchmed: "Synthroid",
-                                              token_: widget.token,
+                                          searchmed: "Synthroid",
+                                          token_: widget.token,
                                           givenDataSet: snapshot.data,
                                         ),
                                       ),
@@ -101,8 +108,10 @@ class _SeeAllMedicineState extends State<SeeAllMedicine> {
                                     height: screenHeight * 0.3,
                                     width: screenWidth * 0.94,
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                       children: [
                                         SizedBox(
                                           height: screenHeight * 0.02,
@@ -129,86 +138,114 @@ class _SeeAllMedicineState extends State<SeeAllMedicine> {
                                           height: screenHeight * 0.02,
                                         ),
                                         Row(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.center,
-                                          children: [
-                                            Column(
-                                              mainAxisAlignment: MainAxisAlignment.center,
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                Image(
-                                                  image: const AssetImage(
-                                                      'lib/assets/med.png'),
-                                                  height: screenHeight * 0.2,
-                                                ),
-                                              ]
-                                            ),
-                                            SizedBox(
-                                              width : 1,
-                                              height: screenHeight * 0.18,
-                                              child: const ColoredBox(color: primaryColor),
-                                            ),
-                                            SizedBox(
-                                              width : screenWidth * 0.05,
-                                              height: screenHeight * 0.18,
-                                            ),
-
-                                            Column(
-                                              mainAxisAlignment: MainAxisAlignment.center,
-                                              crossAxisAlignment: CrossAxisAlignment.center,
-
-                                              children: [
-                                                Container (
-                                                    width : screenWidth * 0.35,
-
-                                                    child: Column(
-                                                      mainAxisAlignment: MainAxisAlignment.center,
-                                                      crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                      children: [
-                                                        Text(
-                                                          snapshot.data?.strenght ?? "\u2022 Bullet...-...Bullet...-...Bullet Text",
-                                                          maxLines: 3,
-                                                          overflow: TextOverflow.ellipsis,
-                                                          textAlign: TextAlign.left,
-                                                          style: const TextStyle(
-                                                            fontSize: 15,
-                                                            color: primaryColor,
-                                                          ),
-                                                        ),
-                                                        Text(
-                                                          snapshot.data?.strenght ?? "\u2022 Bullet...-...Bullet Text",
-                                                          maxLines: 3,
-                                                          overflow: TextOverflow.ellipsis,
-                                                          textAlign: TextAlign.left,
-                                                          style: const TextStyle(
-                                                            fontSize: 15,
-                                                            color: primaryColor,
-                                                          ),
-                                                        ),
-                                                        Text(
-                                                          snapshot.data?.strenght ?? "\u2022 Bullet Text",
-                                                          maxLines: 3,
-                                                          overflow: TextOverflow.ellipsis,
-                                                          textAlign: TextAlign.left,
-                                                          style: const TextStyle(
-                                                            fontSize: 15,
-                                                            color: primaryColor,
-                                                          ),
-                                                        ),
-                                                      ]
-                                                    )
-                                                )
-                                              ],
-                                            )
-                                          ]
-                                        ),
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Image(
+                                                      image: const AssetImage(
+                                                          'lib/assets/med.png'),
+                                                      height:
+                                                          screenHeight * 0.2,
+                                                    ),
+                                                  ]),
+                                              SizedBox(
+                                                width: 1,
+                                                height: screenHeight * 0.18,
+                                                child: const ColoredBox(
+                                                    color: primaryColor),
+                                              ),
+                                              SizedBox(
+                                                width: screenWidth * 0.05,
+                                                height: screenHeight * 0.18,
+                                              ),
+                                              Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
+                                                children: [
+                                                  Container(
+                                                      width: screenWidth * 0.35,
+                                                      child: Column(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              snapshot.data
+                                                                      ?.strenght ??
+                                                                  "\u2022 a thyroid medicine that replaces a hormone normally produced by your thyroid gland to regulate the body's energy and metabolism",
+                                                              maxLines: 3,
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .ellipsis,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .left,
+                                                              style:
+                                                                  const TextStyle(
+                                                                fontSize: 15,
+                                                                color:
+                                                                    primaryColor,
+                                                              ),
+                                                            ),
+                                                            Text(
+                                                              snapshot.data
+                                                                      ?.strenght ??
+                                                                  "\u2022 Bullet...-...Bullet Text",
+                                                              maxLines: 3,
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .ellipsis,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .left,
+                                                              style:
+                                                                  const TextStyle(
+                                                                fontSize: 15,
+                                                                color:
+                                                                    primaryColor,
+                                                              ),
+                                                            ),
+                                                            Text(
+                                                              snapshot.data
+                                                                      ?.strenght ??
+                                                                  "\u2022 Bullet Text",
+                                                              maxLines: 3,
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .ellipsis,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .left,
+                                                              style:
+                                                                  const TextStyle(
+                                                                fontSize: 15,
+                                                                color:
+                                                                    primaryColor,
+                                                              ),
+                                                            ),
+                                                          ]))
+                                                ],
+                                              )
+                                            ]),
                                       ],
                                     ),
                                   ),
                                 );
                               }
-                                return const CircularProgressIndicator();
+                              return const CircularProgressIndicator();
                             },
                           ),
                         ],
@@ -216,7 +253,11 @@ class _SeeAllMedicineState extends State<SeeAllMedicine> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: screenHeight * 0.03, top: screenHeight * 0.015, right: screenHeight * 0.03, bottom: screenHeight * 0.015 ),
+                    padding: EdgeInsets.only(
+                        left: screenHeight * 0.03,
+                        top: screenHeight * 0.015,
+                        right: screenHeight * 0.03,
+                        bottom: screenHeight * 0.015),
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Stack(
@@ -237,8 +278,8 @@ class _SeeAllMedicineState extends State<SeeAllMedicine> {
                                       MaterialPageRoute(
                                         builder: (context) =>
                                             IndividualMedicine(
-                                              searchmed: "Norvasc",
-                                              token_: widget.token,
+                                          searchmed: "Norvasc",
+                                          token_: widget.token,
                                           givenDataSet: snapshot.data,
                                         ),
                                       ),
@@ -248,8 +289,10 @@ class _SeeAllMedicineState extends State<SeeAllMedicine> {
                                     height: screenHeight * 0.3,
                                     width: screenWidth * 0.94,
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                       children: [
                                         SizedBox(
                                           height: screenHeight * 0.02,
@@ -276,87 +319,114 @@ class _SeeAllMedicineState extends State<SeeAllMedicine> {
                                           height: screenHeight * 0.02,
                                         ),
                                         Row(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.center,
-                                          children: [
-                                            Column(
-                                              mainAxisAlignment: MainAxisAlignment.center,
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                Image(
-                                                  image: const AssetImage(
-                                                      'lib/assets/med.png'),
-                                                  height: screenHeight * 0.2,
-                                                ),
-                                              ]
-                                            ),
-                                            SizedBox(
-                                              width : 1,
-                                              height: screenHeight * 0.18,
-                                              child: const ColoredBox(color: primaryColor),
-                                            ),
-                                            SizedBox(
-                                              width : screenWidth * 0.05,
-                                              height: screenHeight * 0.18,
-                                            ),
-
-                                            Column(
-                                              mainAxisAlignment: MainAxisAlignment.center,
-                                              crossAxisAlignment: CrossAxisAlignment.center,
-
-                                              children: [
-                                                Container (
-                                                    width : screenWidth * 0.35,
-
-                                                    child: Column(
-
-                                                      mainAxisAlignment: MainAxisAlignment.center,
-                                                      crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                      children: [
-                                                        Text(
-                                                          snapshot.data?.strenght ?? "\u2022 Bullet...-...Bullet...-...Bullet Text",
-                                                          maxLines: 3,
-                                                          overflow: TextOverflow.ellipsis,
-                                                          textAlign: TextAlign.left,
-                                                          style: const TextStyle(
-                                                            fontSize: 15,
-                                                            color: primaryColor,
-                                                          ),
-                                                        ),
-                                                        Text(
-                                                          snapshot.data?.strenght ?? "\u2022 Bullet...-...Bullet Text",
-                                                          maxLines: 3,
-                                                          overflow: TextOverflow.ellipsis,
-                                                          textAlign: TextAlign.left,
-                                                          style: const TextStyle(
-                                                            fontSize: 15,
-                                                            color: primaryColor,
-                                                          ),
-                                                        ),
-                                                        Text(
-                                                          snapshot.data?.strenght ?? "\u2022 Bullet Text",
-                                                          maxLines: 3,
-                                                          overflow: TextOverflow.ellipsis,
-                                                          textAlign: TextAlign.left,
-                                                          style: const TextStyle(
-                                                            fontSize: 15,
-                                                            color: primaryColor,
-                                                          ),
-                                                        ),
-                                                      ]
-                                                    )
-                                                )
-                                              ],
-                                            )
-                                          ]
-                                        ),
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Image(
+                                                      image: const AssetImage(
+                                                          'lib/assets/med.png'),
+                                                      height:
+                                                          screenHeight * 0.2,
+                                                    ),
+                                                  ]),
+                                              SizedBox(
+                                                width: 1,
+                                                height: screenHeight * 0.18,
+                                                child: const ColoredBox(
+                                                    color: primaryColor),
+                                              ),
+                                              SizedBox(
+                                                width: screenWidth * 0.05,
+                                                height: screenHeight * 0.18,
+                                              ),
+                                              Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
+                                                children: [
+                                                  Container(
+                                                      width: screenWidth * 0.35,
+                                                      child: Column(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              snapshot.data
+                                                                      ?.strenght ??
+                                                                  "\u2022 norvasc is a type of medicine known as a calcium channel blocker (CCB). It is used to treat high blood pressure (hypertension) and a type of chest pain called angina.",
+                                                              maxLines: 3,
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .ellipsis,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .left,
+                                                              style:
+                                                                  const TextStyle(
+                                                                fontSize: 15,
+                                                                color:
+                                                                    primaryColor,
+                                                              ),
+                                                            ),
+                                                            Text(
+                                                              snapshot.data
+                                                                      ?.strenght ??
+                                                                  "\u2022 Bullet...-...Bullet Text",
+                                                              maxLines: 3,
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .ellipsis,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .left,
+                                                              style:
+                                                                  const TextStyle(
+                                                                fontSize: 15,
+                                                                color:
+                                                                    primaryColor,
+                                                              ),
+                                                            ),
+                                                            Text(
+                                                              snapshot.data
+                                                                      ?.strenght ??
+                                                                  "\u2022 Bullet Text",
+                                                              maxLines: 3,
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .ellipsis,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .left,
+                                                              style:
+                                                                  const TextStyle(
+                                                                fontSize: 15,
+                                                                color:
+                                                                    primaryColor,
+                                                              ),
+                                                            ),
+                                                          ]))
+                                                ],
+                                              )
+                                            ]),
                                       ],
                                     ),
                                   ),
                                 );
                               }
-                                return const CircularProgressIndicator();
+                              return const CircularProgressIndicator();
                             },
                           ),
                         ],
@@ -364,7 +434,11 @@ class _SeeAllMedicineState extends State<SeeAllMedicine> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: screenHeight * 0.03, top: screenHeight * 0.015, right: screenHeight * 0.03, bottom: screenHeight * 0.015 ),
+                    padding: EdgeInsets.only(
+                        left: screenHeight * 0.03,
+                        top: screenHeight * 0.015,
+                        right: screenHeight * 0.03,
+                        bottom: screenHeight * 0.015),
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Stack(
@@ -385,8 +459,8 @@ class _SeeAllMedicineState extends State<SeeAllMedicine> {
                                       MaterialPageRoute(
                                         builder: (context) =>
                                             IndividualMedicine(
-                                              searchmed: "Amoxicillin",
-                                              token_: widget.token,
+                                          searchmed: "Amoxicillin",
+                                          token_: widget.token,
                                           givenDataSet: snapshot.data,
                                         ),
                                       ),
@@ -396,8 +470,10 @@ class _SeeAllMedicineState extends State<SeeAllMedicine> {
                                     height: screenHeight * 0.3,
                                     width: screenWidth * 0.94,
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                       children: [
                                         SizedBox(
                                           height: screenHeight * 0.02,
@@ -424,87 +500,114 @@ class _SeeAllMedicineState extends State<SeeAllMedicine> {
                                           height: screenHeight * 0.02,
                                         ),
                                         Row(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.center,
-                                          children: [
-                                            Column(
-                                              mainAxisAlignment: MainAxisAlignment.center,
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                Image(
-                                                  image: const AssetImage(
-                                                      'lib/assets/med.png'),
-                                                  height: screenHeight * 0.2,
-                                                ),
-                                              ]
-                                            ),
-                                            SizedBox(
-                                              width : 1,
-                                              height: screenHeight * 0.18,
-                                              child: const ColoredBox(color: primaryColor),
-                                            ),
-                                            SizedBox(
-                                              width : screenWidth * 0.05,
-                                              height: screenHeight * 0.18,
-                                            ),
-
-                                            Column(
-                                              mainAxisAlignment: MainAxisAlignment.center,
-                                              crossAxisAlignment: CrossAxisAlignment.center,
-
-                                              children: [
-                                                Container (
-                                                    width : screenWidth * 0.35,
-
-                                                    child: Column(
-
-                                                      mainAxisAlignment: MainAxisAlignment.center,
-                                                      crossAxisAlignment: CrossAxisAlignment.start,
-
-                                                      children: [
-                                                        Text(
-                                                          snapshot.data?.strenght ?? "\u2022 Bullet...-...Bullet...-...Bullet Text",
-                                                          maxLines: 3,
-                                                          overflow: TextOverflow.ellipsis,
-                                                          textAlign: TextAlign.left,
-                                                          style: const TextStyle(
-                                                            fontSize: 15,
-                                                            color: primaryColor,
-                                                          ),
-                                                        ),
-                                                        Text(
-                                                          snapshot.data?.strenght ?? "\u2022 Bullet...-...Bullet Text",
-                                                          maxLines: 3,
-                                                          overflow: TextOverflow.ellipsis,
-                                                          textAlign: TextAlign.left,
-                                                          style: const TextStyle(
-                                                            fontSize: 15,
-                                                            color: primaryColor,
-                                                          ),
-                                                        ),
-                                                        Text(
-                                                          snapshot.data?.strenght ?? "\u2022 Bullet Text",
-                                                          maxLines: 3,
-                                                          overflow: TextOverflow.ellipsis,
-                                                          textAlign: TextAlign.left,
-                                                          style: const TextStyle(
-                                                            fontSize: 15,
-                                                            color: primaryColor,
-                                                          ),
-                                                        ),
-                                                      ]
-                                                    )
-                                                )
-                                              ],
-                                            )
-                                          ]
-                                        ),
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Image(
+                                                      image: const AssetImage(
+                                                          'lib/assets/med.png'),
+                                                      height:
+                                                          screenHeight * 0.2,
+                                                    ),
+                                                  ]),
+                                              SizedBox(
+                                                width: 1,
+                                                height: screenHeight * 0.18,
+                                                child: const ColoredBox(
+                                                    color: primaryColor),
+                                              ),
+                                              SizedBox(
+                                                width: screenWidth * 0.05,
+                                                height: screenHeight * 0.18,
+                                              ),
+                                              Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
+                                                children: [
+                                                  Container(
+                                                      width: screenWidth * 0.35,
+                                                      child: Column(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              snapshot.data
+                                                                      ?.strenght ??
+                                                                  "\u2022 Amoxicillin is a penicillin antibiotic. It is used to treat bacterial infections, such as chest infections (including pneumonia) and dental abscesses.",
+                                                              maxLines: 3,
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .ellipsis,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .left,
+                                                              style:
+                                                                  const TextStyle(
+                                                                fontSize: 15,
+                                                                color:
+                                                                    primaryColor,
+                                                              ),
+                                                            ),
+                                                            Text(
+                                                              snapshot.data
+                                                                      ?.strenght ??
+                                                                  "\u2022 Bullet...-...Bullet Text",
+                                                              maxLines: 3,
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .ellipsis,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .left,
+                                                              style:
+                                                                  const TextStyle(
+                                                                fontSize: 15,
+                                                                color:
+                                                                    primaryColor,
+                                                              ),
+                                                            ),
+                                                            Text(
+                                                              snapshot.data
+                                                                      ?.strenght ??
+                                                                  "\u2022 Bullet Text",
+                                                              maxLines: 3,
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .ellipsis,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .left,
+                                                              style:
+                                                                  const TextStyle(
+                                                                fontSize: 15,
+                                                                color:
+                                                                    primaryColor,
+                                                              ),
+                                                            ),
+                                                          ]))
+                                                ],
+                                              )
+                                            ]),
                                       ],
                                     ),
                                   ),
                                 );
                               }
-                                return const CircularProgressIndicator();
+                              return const CircularProgressIndicator();
                             },
                           ),
                         ],
@@ -514,13 +617,9 @@ class _SeeAllMedicineState extends State<SeeAllMedicine> {
                 ],
               ),
             ),
-            ],
-          ),
+          ],
         ),
+      ),
     );
   }
 }
-
-
-
-
